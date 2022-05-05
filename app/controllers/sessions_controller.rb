@@ -1,5 +1,8 @@
 class SessionsController < ApplicationController
-  
+  respond_to :json
+  before_action :cors_preflight_check
+  after_action :cors_set_access_control_headers
+
   def create
     user = User.find_by(username: params[:username])
     if user

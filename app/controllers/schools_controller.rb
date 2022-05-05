@@ -1,4 +1,9 @@
 class SchoolsController < ApplicationController
+respond_to :json
+before_action :cors_preflight_check
+after_action :cors_set_access_control_headers
+# skip_before_action  :verify_authenticity_token
+
     def index
         render json: School.all
     end

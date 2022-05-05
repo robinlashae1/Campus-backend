@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
-  scope '/api/version1' do
+  scope '/api' do
   resources :schools, only: [:index, :destroy, :create, :show]
 resources :users
 resources :service_categories do

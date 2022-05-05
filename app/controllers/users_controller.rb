@@ -1,5 +1,8 @@
 class UsersController < ApplicationController
     # skip_before_action :authorize, only: :create
+    respond_to :json
+before_action :cors_preflight_check
+after_action :cors_set_access_control_headers
 
     def create
         user = User.create!(user_params)

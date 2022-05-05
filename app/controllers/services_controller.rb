@@ -1,5 +1,9 @@
 class ServicesController < ApplicationController
-     def index
+    respond_to :json
+    before_action :cors_preflight_check
+    after_action :cors_set_access_control_headers
+
+    def index
         render json: Service.all
     end
     def create

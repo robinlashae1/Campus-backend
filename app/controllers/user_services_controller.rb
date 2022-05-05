@@ -1,6 +1,9 @@
 class UserServicesController < ApplicationController
     rescue_from ActiveRecord::RecordNotFound, with: :render_not_found_response
     rescue_from ActiveRecord::RecordInvalid, with: :render_unprocessable_entity_response
+    respond_to :json
+    before_action :cors_preflight_check
+    after_action :cors_set_access_control_headers
 
     def index
         render json: UserService.all
