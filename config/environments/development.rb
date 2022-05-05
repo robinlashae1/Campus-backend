@@ -41,8 +41,8 @@ Rails.application.configure do
   # Raise exceptions for disallowed deprecations.
   config.active_support.disallowed_deprecation = :raise
   
-    config.allowed_cors_origins = 'http://localhost:3001'
-    
+
+
   # Tell Active Support which deprecation messages to disallow.
   config.active_support.disallowed_deprecation_warnings = []
 
